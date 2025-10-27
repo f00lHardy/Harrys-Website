@@ -1,4 +1,4 @@
-import { ProductCategory, GalleryItem, Special } from './types';
+import { ProductCategory, GalleryItem, Special, GasOption } from './types';
 
 export const BUSINESS_INFO = {
   name: "Harry's Hardware",
@@ -106,17 +106,17 @@ export const INITIAL_PRODUCT_CATEGORIES: ProductCategory[] = [
   },
 ];
 
-export const GALLERY_ITEMS: GalleryItem[] = [
-  { src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop", alt: "Inside Harry's Hardware", category: 'store' },
-  { src: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=800&auto=format&fit=crop", alt: "The friendly team at Harry's Hardware", category: 'staff' },
-  { src: "https://images.unsplash.com/photo-1621929749712-de5934e6526e?q=80&w=800&auto=format&fit=crop", alt: "Aisle with various products", category: 'products' },
-  { src: "https://images.unsplash.com/photo-1601131123491-3a830953a7b6?q=80&w=800&auto=format&fit=crop", alt: "Franke brand products", category: 'brands' },
-  { src: "https://images.ctfassets.net/o65arnbxpbco/79EPL1IaxG1slCX0vU3NxN/efe8a84473eb1fb17dd105d9b9a21eef/2023_RY_USB_Lithium_Family_June_A_Final.jpg", alt: "Ryobi power tools", category: 'brands' },
-  { src: "https://images.unsplash.com/photo-1531215912328-a35f2a1b9a89?q=80&w=800&auto=format&fit=crop", alt: "Plascon paint selection", category: 'brands' },
-  { src: "https://images.unsplash.com/photo-1595825392095-d4a1378a5e01?q=80&w=800&auto=format&fit=crop", alt: "Bosch power tools", category: 'brands' },
-  { src: "https://images.unsplash.com/photo-1521992132984-7834e5b99215?q=80&w=800&auto=format&fit=crop", alt: "Store shelf with tools", category: 'store' },
-  { src: "https://images.unsplash.com/photo-1455582449734-e3621406521a?q=80&w=800&auto=format&fit=crop", alt: "Gardening section", category: 'products' },
-  { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop", alt: "Building materials", category: 'products' },
+export const INITIAL_GALLERY_ITEMS: GalleryItem[] = [
+  { id: 1, src: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop", alt: "Inside Harry's Hardware", category: 'store' },
+  { id: 2, src: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=800&auto=format&fit=crop", alt: "The friendly team at Harry's Hardware", category: 'staff' },
+  { id: 3, src: "https://images.unsplash.com/photo-1621929749712-de5934e6526e?q=80&w=800&auto=format&fit=crop", alt: "Aisle with various products", category: 'products' },
+  { id: 4, src: "https://images.unsplash.com/photo-1601131123491-3a830953a7b6?q=80&w=800&auto=format&fit=crop", alt: "Franke brand products", category: 'brands' },
+  { id: 5, src: "https://images.ctfassets.net/o65arnbxpbco/79EPL1IaxG1slCX0vU3NxN/efe8a84473eb1fb17dd105d9b9a21eef/2023_RY_USB_Lithium_Family_June_A_Final.jpg", alt: "Ryobi power tools", category: 'brands' },
+  { id: 6, src: "https://images.unsplash.com/photo-1531215912328-a35f2a1b9a89?q=80&w=800&auto=format&fit=crop", alt: "Excelsior paint selection", category: 'brands' },
+  { id: 7, src: "https://images.unsplash.com/photo-1595825392095-d4a1378a5e01?q=80&w=800&auto=format&fit=crop", alt: "Bosch power tools", category: 'brands' },
+  { id: 8, src: "https://images.unsplash.com/photo-1521992132984-7834e5b99215?q=80&w=800&auto=format&fit=crop", alt: "Store shelf with tools", category: 'store' },
+  { id: 9, src: "https://images.unsplash.com/photo-1455582449734-e3621406521a?q=80&w=800&auto=format&fit=crop", alt: "Gardening section", category: 'products' },
+  { id: 10, src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop", alt: "Building materials", category: 'products' },
 ];
 
 export const INITIAL_SPECIALS: Special[] = [
@@ -127,12 +127,13 @@ export const INITIAL_SPECIALS: Special[] = [
         description: 'Upgrade your toolkit with our Ryobi power tools, now at a 20% discount. Limited time offer!',
         startDate: new Date(new Date().setDate(new Date().getDate() - 5)).toISOString().split('T')[0],
         endDate: new Date(new Date().setDate(new Date().getDate() + 10)).toISOString().split('T')[0],
+        price: 'From R499.99'
     },
     {
         id: 2,
         image: 'https://images.unsplash.com/photo-1531215912328-a35f2a1b9a89?q=80&w=800&auto=format&fit=crop',
-        title: 'Plascon Paint Deal: Buy 3 Get 1 Free',
-        description: 'Refresh your home for less. Buy any three 5L Plascon paint cans and get the fourth one absolutely free.',
+        title: 'Excelsior Paint Deal: Buy 3 Get 1 Free',
+        description: 'Refresh your home for less. Buy any three 5L Excelsior paint cans and get the fourth one absolutely free.',
         startDate: new Date(new Date().setDate(new Date().getDate() - 2)).toISOString().split('T')[0],
         endDate: new Date(new Date().setDate(new Date().getDate() + 5)).toISOString().split('T')[0],
     },
@@ -144,4 +145,10 @@ export const INITIAL_SPECIALS: Special[] = [
         startDate: '2023-01-01',
         endDate: '2023-01-15',
     }
+];
+
+export const INITIAL_GAS_OPTIONS: GasOption[] = [
+    { size: 9, name: "9kg Gas Refill", price: 250, image: "https://raw.githubusercontent.com/f00lHardy/Harrys-Website/main/9kg%20Gas.jpg" },
+    { size: 19, name: "19kg Gas Refill", price: 500, image: "https://raw.githubusercontent.com/f00lHardy/Harrys-Website/main/19kg%20Gas.jpg" },
+    { size: 48, name: "48kg Gas Refill", price: 1200, image: "https://raw.githubusercontent.com/f00lHardy/Harrys-Website/main/48kg%20Gas.jpg" },
 ];

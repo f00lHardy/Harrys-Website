@@ -16,7 +16,7 @@
               'brand-dark': '#231F20',
             },
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ['Poppins', 'sans-serif'],
             }
           }
         }
@@ -24,7 +24,7 @@
     </script>
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script type="importmap">
 {
   "imports": {
@@ -35,8 +35,105 @@
   }
 }
 </script>
+<style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop');
+      background-attachment: fixed;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Redesigned form input styles for better visibility and UX */
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    input[type='password'],
+    input[type='number'],
+    input[type='date'],
+    textarea,
+    select {
+      background-color: #FAFAFA !important; /* Soft off-white background */
+      color: #333333 !important; /* Dark charcoal text for readability */
+      border: 1px solid #D1D5DB !important; /* subtle border */
+      border-radius: 0.375rem !important; /* consistent rounding */
+      padding: 0.5rem 0.75rem !important;
+      font-weight: 500;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    /* Style for select dropdown arrow */
+    select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    input[type='text']:focus,
+    input[type='email']:focus,
+    input[type='tel']:focus,
+    input[type='password']:focus,
+    input[type='number']:focus,
+    input[type='date']:focus,
+    textarea:focus,
+    select:focus {
+      outline: none !important;
+      border-color: #5A922A !important; /* brand-green for focus */
+      box-shadow: 0 0 0 2px rgba(90, 146, 42, 0.2) !important; /* subtle green glow */
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #6B7280 !important; /* gray-500 */
+      opacity: 1; /* Firefox */
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #6B7280 !important;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #6B7280 !important;
+    }
+    /* End of redesigned form input styles */
+    
+    /* Image Loading Shimmer Effect */
+    @keyframes shimmer {
+      0% { background-position: -1000px 0; }
+      100% { background-position: 1000px 0; }
+    }
+    .shimmer-bg {
+      animation: shimmer 2s infinite linear;
+      background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+      background-size: 1200px 100%;
+    }
+
+    @media print {
+      body {
+        background-image: none !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      body * {
+        visibility: hidden;
+      }
+      #print-area, #print-area * {
+        visibility: visible;
+      }
+      #print-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 2rem;
+      }
+    }
+  </style>
 </head>
-  <body class="bg-gray-50 text-brand-dark">
+  <body class="text-brand-dark">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
